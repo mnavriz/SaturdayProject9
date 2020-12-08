@@ -1,6 +1,23 @@
 package Lessons;
 
-public class Music  {
+import Student.StudentClass;
+
+import java.util.ArrayList;
+
+public class Music extends LessonClass {
+    public Music(StudentClass StudentClass) {
+        super(StudentClass);
+    }
+
+    @Override
+    public ArrayList<String> topics() {
+        topicList.add("Peacemaking Skills for Little Kids");
+        topicList.add("Learning Through Literature");
+        topicList.add("Creative Conflict Solving");
+        topicList.add("Creating Peace, Building Community");
+        topicList.add("WinWin!");
+        return topicList;
+    }
 
     /*
     This class child of the LessonClass
@@ -9,7 +26,7 @@ public class Music  {
 
     Music class is the child of the LessonClass
 
-      add following values to arrayList(topicList) in the override method that comes from the abstract class
+     add following values to arrayList(topicList) in the override method that comes from the abstract class
      Peacemaking Skills for Little Kids
      Learning Through Literature
      Creative Conflict Solving
@@ -18,5 +35,7 @@ public class Music  {
 return topicList
      */
 
-
+    private ArrayList<String> topicList;
 }
+
+

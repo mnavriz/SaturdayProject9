@@ -24,7 +24,7 @@ public class SchoolLocation {
         setSchoolLocation
         setPrice
      */
-public  SchoolLocation(String location) throws Exception {
+public  SchoolLocation(String location)  {
     this.location = location;
     addLocation();
     setPrice();
@@ -48,7 +48,7 @@ public  SchoolLocation(String location) throws Exception {
             if the location is non of these then throw an exception  --> "This is not a valid location"
 
      */
-public void setPrice() throws Exception {
+public void setPrice()  {
 
 
         if(location == "USA"){
@@ -67,7 +67,13 @@ public void setPrice() throws Exception {
             price = "$7500";
         }
          else {
-       throw new Exception ("This is not a valid location");
+             try{
+                 throw new Exception ("This is not a valid location");
+             }catch ( Exception e){
+
+                 e.printStackTrace();
+             }
+
 
     }
 }

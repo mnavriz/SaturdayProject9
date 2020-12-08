@@ -1,7 +1,24 @@
 package Lessons;
 
 
-public class Chemistry  {
+import Student.StudentClass;
+
+import java.util.ArrayList;
+
+public class Chemistry extends LessonClass {
+
+    public Chemistry(StudentClass StudentClass) {
+        super(StudentClass);
+    }
+
+    @Override
+    public ArrayList<String> topics() {
+        topicList.add(" Pedagogy");
+        topicList.add("Prerequisites");
+        topicList.add("Course Offerings");
+        topicList.add("Safety");
+        topicList.add("General Chemistry");
+        return topicList;}
 
       /*
     This class child of the LessonClass
@@ -19,6 +36,8 @@ public class Chemistry  {
      return topicList
 
      */
+      private ArrayList<String> topicList;
 
 
-}
+    }
+

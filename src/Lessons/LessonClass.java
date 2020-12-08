@@ -23,6 +23,7 @@ public abstract class LessonClass {
     private static int totalCreditCount;
     private LinkedHashMap<String,Integer> classNameAndScore;
 
+    private StudentClass studentClass;
     /*
         Create a method name is topics
         This method is a abstract method
@@ -40,9 +41,8 @@ public abstract class LessonClass {
     call the setCreditCount method  which you are expected to create below
      */
 
-    public LessonClass(StudentClass StudentClass) {
-        Student. == StudentClass;
-        Student.StudentClass == StudentClass;//???
+    public LessonClass(StudentClass studentClass) {
+        this.studentClass = studentClass;
         setCreditCount();
     }
 

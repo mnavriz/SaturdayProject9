@@ -3,6 +3,9 @@ package Student;
 
 import java.util.LinkedHashMap;
 
+import Data.StudentData;
+import School.SchoolLocation;
+
 public class StudentClass extends SchoolLocation {
 
   /*
@@ -17,7 +20,7 @@ public class StudentClass extends SchoolLocation {
      */
     private String username, password;
 
-    LinkedHashMap <String,Integer> classNameAndScore = new LinkedHashMap<>();
+    private LinkedHashMap <String,Integer> classNameAndScore;
 
      /*
         Create an constructor
@@ -26,9 +29,12 @@ public class StudentClass extends SchoolLocation {
         Call the setUsernameAndPassword method in the constructor
 
      */
-   // public StudentClass(String username, String password, studentSchoolLocation){
-
-    //}
+    public StudentClass(String username, String password,String studentSchoolLocation){
+        super(studentSchoolLocation);
+        this.username = username;
+        this.password = password;
+        setUsernamePassword(username, password);
+    }
 
     /*
     Create a method name is  setUsernamePassword
@@ -43,17 +49,15 @@ public class StudentClass extends SchoolLocation {
      */
 
     public void setUsernamePassword(String username, String password){
-//???
-        if(username == AddUserNameAndPassword.username){
+
+        if(StudentData.AddUserNameAndPassword().containsKey(username)&&StudentData.AddUserNameAndPassword().containsKey(password)){
             this.username = username;
-            if (password ==AddUserNameAndPassword.password){
-                this.password = password;
+            this.password = password;
             }else {
                 throw new RuntimeException("Not able to find a username and password. Please sign up to website");
             }
         }
 
-    }
 
     /*
         create a set method for the classNameAndScore
@@ -83,12 +87,13 @@ public class StudentClass extends SchoolLocation {
         return "StudentClass{" +
                 "username='" + username + '\'' +
                 ", password='" + password + '\'' +
-                ", SchoolLocation='" + SchoolLocation + '\'' +
-                ", price='" + price + '\'' +
+                "Price =" +this.getPrice();
+                "schoolLocation = " +this.getLocation();
                 ", classNameAndScore=" + classNameAndScore +
                 '}';
     }
 }
+
 
 
 

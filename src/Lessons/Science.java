@@ -1,6 +1,23 @@
 package Lessons;
 
-public class Science   {
+import Student.StudentClass;
+
+import java.util.ArrayList;
+
+public class Science extends LessonClass  {
+    public Science(StudentClass StudentClass) {
+        super(StudentClass);
+    }
+
+    @Override
+    public ArrayList<String> topics() {
+        topicList.add("Animal Habitats");
+        topicList.add("Ball Launcher Challenge");
+        topicList.add("Balloon Car");
+        topicList.add("Bending Plant Roots with Gravity");
+        topicList.add("Birthday Season Weather Report");
+        return topicList;
+    }
 
     /*
     This class child of the LessonClass
@@ -19,5 +36,6 @@ public class Science   {
      return topicList;
 
      */
+    private ArrayList<String> topicList;
 
 }

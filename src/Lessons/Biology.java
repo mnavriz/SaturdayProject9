@@ -1,7 +1,25 @@
 package Lessons;
 
 
-public class Biology  {
+import Student.StudentClass;
+
+import java.util.ArrayList;
+
+public class Biology extends LessonClass {
+    public Biology(StudentClass StudentClass) {
+        super(StudentClass);
+    }
+
+    @Override
+    public ArrayList<String> topics() {
+        topicList.add("Ecology");
+        topicList.add("Opportunities in Biology");
+        topicList.add("Principles of Biology 1");
+        topicList.add("Principles of Genetics");
+        topicList.add("WinWin!");
+        return topicList;
+
+    }
  /*
     This class child of the LessonClass
 
@@ -18,6 +36,5 @@ public class Biology  {
      return topicList
 
      */
-
-
+ private ArrayList<String> topicList;
 }
